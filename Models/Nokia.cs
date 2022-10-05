@@ -1,8 +1,22 @@
+using System.Threading;
+
 namespace DesafioPOO.Models
 {
-    // TODO: Herdar da classe "Smartphone"
-    public class Nokia
+    public class Nokia :Smartphone
     {
-        // TODO: Sobrescrever o método "InstalarAplicativo"
+        public Nokia(string numero,string modelo,string imei,string memoria) : base(numero,modelo,imei,memoria)
+        {
+
+        }
+        public override void InstalarAplicativo(string nomeApp)
+        {
+            Console.WriteLine("Instalando o aplicativo "+nomeApp);
+            for (int i = 0; i < 10;i++)
+            {
+                Console.Write(".");
+                System.Threading.Thread.Sleep(500);
+            }
+            Console.WriteLine($"\nAplicativo {nomeApp} instalado com sucesso!");
+        }
     }
 }
